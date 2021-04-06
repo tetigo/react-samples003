@@ -5,8 +5,10 @@ import React, { useState, useEffect } from 'react'
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0)
 
+  //não podemos colocar hooks dentro de condicionais
   useEffect(() => {
-    console.log(`call useEffect ${value}`)
+    //então colocamos a condicional dentro do hook
+    if (value > 1) console.log(`call useEffect ${value}`)
   })
 
   console.log('render component')
