@@ -9,7 +9,8 @@ const UseEffectBasics = () => {
   useEffect(() => {
     //então colocamos a condicional dentro do hook
     if (value > 1) console.log(`call useEffect ${value}`)
-  })
+    console.log('okokok') //impresso somente uma vez
+  }, []) //segundo parametro vazio faz rodar hook somente no render inicial
 
   console.log('render component')
   return (
