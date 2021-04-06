@@ -17,11 +17,11 @@ const UseEffectCleanup = () => {
     window.addEventListener('resize', checkSize)
     //fazendo esse cleanup, retorna um removeEventListener, o que faz componente
     //que antes do useEffect ser chamado novamente, ele remova o anterior
-    return () => {
-      console.log('cleanup')
-      window.removeEventListener('resize', checkSize)
-    }
-  })
+    // return () => {
+    //   console.log('cleanup')
+    //   window.removeEventListener('resize', checkSize)
+    // }
+  }, []) // outra maneira de executar uma unica vez o event listener
 
   return (
     <>
