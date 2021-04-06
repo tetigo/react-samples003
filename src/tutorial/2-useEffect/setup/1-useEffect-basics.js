@@ -10,6 +10,14 @@ const UseEffectBasics = () => {
     //então colocamos a condicional dentro do hook
     if (value > 1) console.log(`call useEffect ${value}`)
     console.log('okokok') //impresso somente uma vez
+  }, [value]) //useEffect chamado sempre que value alterar valor
+
+  useEffect(() => {
+    console.log('roda sempre que renderizar componente')
+  }) // sem ter lista de dependencia, roda todas as vezes que renderizar componente
+
+  useEffect(() => {
+    console.log('hi again running just one time')
   }, []) //segundo parametro vazio faz rodar hook somente no render inicial
 
   console.log('render component')
