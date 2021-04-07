@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 const ShortCircuit = () => {
   const [text, setText] = useState('')
-
+  const [isError, setIsError] = useState(false)
   // operador || retorna o primeiro true
   const firstValue = text || 'hello world'
   // operador && retorna o ultimo true se todos true
@@ -13,9 +13,22 @@ const ShortCircuit = () => {
 
   return (
     <>
-      <h1>{firstValue}</h1>
+      {/* <h1>{firstValue}</h1>
       <h1>value: {secondValue}</h1>
-      {text && <h2>okokok</h2>}
+      {if()console.log('cannot do that');}
+      {text && <h2>okokok</h2>} */}
+      <h1>{text || 'john doe'}</h1>
+      <button className="btn" onClick={() => setIsError(!isError)}>
+        toggle error
+      </button>
+      {isError && <h1>Error..</h1>}
+      {isError ? (
+        <p>there is an error</p>
+      ) : (
+        <div>
+          <h2>There is no error</h2>
+        </div>
+      )}
     </>
   )
 }
